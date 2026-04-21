@@ -112,6 +112,7 @@
     </div>
     <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
       <a href="#features" class="hover:text-sky-400 transition-colors">Features</a>
+      <a href="#demo" class="hover:text-sky-400 transition-colors">Live Demo</a>
       <a href="#architecture" class="hover:text-sky-400 transition-colors">Architecture</a>
       <a href="#quickstart" class="hover:text-sky-400 transition-colors">Quick Start</a>
       <a href="#opensource" class="hover:text-sky-400 transition-colors">Open Source</a>
@@ -373,6 +374,89 @@
         <p class="text-slate-400 text-sm leading-relaxed">Plug in, boot, done. First-boot wizard configures interface, IPs, and passwords. Automatic system updates with <code class="text-sky-400 font-mono text-xs">ids-update</code>. No OS admin skills needed.</p>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- Live Demo / App Preview -->
+<section id="demo" class="py-24 bg-slate-950/60">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-green-700/50 text-green-400 bg-green-900/20 mb-4">
+        <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span>
+        PRODUKTIVE INSTALLATION
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">Die App in Aktion.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">Echte Alerts, echte Netzwerke — Screenshots aus einer laufenden CYJAN IDS Instanz.</p>
+    </div>
+
+    <!-- Tab switcher -->
+    <div class="flex gap-3 justify-center mb-8 flex-wrap">
+      <button onclick="showTab('tab-dashboard')" id="btn-dashboard"
+        class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-sky-500 text-sky-300 bg-sky-900/30">
+        Dashboard &amp; Alerts
+      </button>
+      <button onclick="showTab('tab-hosts')" id="btn-hosts"
+        class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
+        Host-Inventar
+      </button>
+      <button onclick="showTab('tab-networks')" id="btn-networks"
+        class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
+        Netzwerke
+      </button>
+    </div>
+
+    <!-- Screenshot panels -->
+    <div class="card-bg rounded-2xl overflow-hidden glow-border" style="box-shadow: 0 0 0 1px rgba(14,165,233,0.2), 0 0 60px rgba(14,165,233,0.08);">
+      <!-- Fake browser chrome -->
+      <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-800 bg-slate-900/80">
+        <div class="flex gap-1.5">
+          <div class="w-3 h-3 rounded-full bg-red-500/70"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-500/70"></div>
+          <div class="w-3 h-3 rounded-full bg-green-500/70"></div>
+        </div>
+        <div class="flex-1 mx-4">
+          <div class="bg-slate-800 rounded-lg px-4 py-1.5 text-xs font-mono text-slate-400 text-center max-w-sm mx-auto">
+            192.168.1.79
+          </div>
+        </div>
+        <span class="w-3 h-3 rounded-full bg-green-400 pulse-dot" title="Live"></span>
+      </div>
+
+      <div id="tab-dashboard" class="demo-tab">
+        <img src="screenshots/dashboard.png" alt="CYJAN IDS Dashboard mit Live-Alerts" class="w-full" loading="lazy" />
+      </div>
+      <div id="tab-hosts" class="demo-tab hidden">
+        <img src="screenshots/hosts.png" alt="CYJAN IDS Host-Inventar" class="w-full" loading="lazy" />
+      </div>
+      <div id="tab-networks" class="demo-tab hidden">
+        <img src="screenshots/networks.png" alt="CYJAN IDS Netzwerkverwaltung" class="w-full" loading="lazy" />
+      </div>
+    </div>
+
+    <!-- Feature callouts below screenshot -->
+    <div class="mt-8 grid sm:grid-cols-3 gap-4">
+      <div class="card-bg rounded-xl p-5 glow-border text-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
+          <span class="font-semibold text-sky-100">Live Alert Feed</span>
+        </div>
+        <p class="text-slate-400 leading-relaxed">Echtzeit-WebSocket-Stream aller Alarme — mit Schweregrad, Quelle, Ziel, Tags und direktem PCAP-Download.</p>
+      </div>
+      <div class="card-bg rounded-xl p-5 glow-border text-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+          <span class="font-semibold text-sky-100">Threat Level Gauge</span>
+        </div>
+        <p class="text-slate-400 leading-relaxed">Aggregierter Bedrohungsindex in Echtzeit — C/H/M/L-Aufschlüsselung für sofortigen Überblick über die Netzwerkgesundheit.</p>
+      </div>
+      <div class="card-bg rounded-xl p-5 glow-border text-sm">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          <span class="font-semibold text-sky-100">Host Trust System</span>
+        </div>
+        <p class="text-slate-400 leading-relaxed">28 bekannte Hosts, automatisch angereichert via DNS und GeoIP — unbekannte Geräte lösen sofort einen Alert aus.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -667,6 +751,20 @@
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Demo tab switcher
+  function showTab(tabId) {
+    document.querySelectorAll('.demo-tab').forEach(t => t.classList.add('hidden'));
+    document.getElementById(tabId).classList.remove('hidden');
+    const map = { 'tab-dashboard': 'btn-dashboard', 'tab-hosts': 'btn-hosts', 'tab-networks': 'btn-networks' };
+    document.querySelectorAll('.demo-tab-btn').forEach(b => {
+      b.classList.remove('border-sky-500', 'text-sky-300', 'bg-sky-900/30');
+      b.classList.add('border-slate-700', 'text-slate-400');
+    });
+    const active = document.getElementById(map[tabId]);
+    active.classList.remove('border-slate-700', 'text-slate-400');
+    active.classList.add('border-sky-500', 'text-sky-300', 'bg-sky-900/30');
+  }
 </script>
 </body>
 </html>

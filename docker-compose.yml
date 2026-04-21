@@ -6,5 +6,6 @@ services:
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
       - ./CYJAN_Marketing_Brochure.pdf:/usr/share/nginx/html/CYJAN_Marketing_Brochure.pdf:ro
+      - ./screenshots:/usr/share/nginx/html/screenshots:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
     restart: unless-stopped
