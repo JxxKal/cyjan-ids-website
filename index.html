@@ -93,24 +93,22 @@
       border: 1px solid rgba(14, 165, 233, 0.25);
     }
   </style>
+
+  <!-- React + Babel for the NetworkGlobe hero component (design-system ui_kit) -->
+  <script crossorigin src="https://unpkg.com/react@18.3.1/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"></script>
 </head>
 <body>
 
 <!-- Navbar -->
-<nav class="fixed top-0 w-full z-50 border-b border-sky-900/30" style="background: rgba(2,6,23,0.85); backdrop-filter: blur(16px);">
+<nav class="fixed top-0 w-full z-50 border-b border-sky-900/15" style="background: rgba(2,6,23,0.85); backdrop-filter: blur(16px);">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-    <div class="flex items-center gap-3">
-      <div class="w-8 h-8">
-        <svg viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-          <path d="M340 82 L458 132 L458 272 Q458 358 340 418 Q222 358 222 272 L222 132 Z" fill="#0f172a" stroke="#0ea5e9" stroke-width="2.5"/>
-          <ellipse cx="340" cy="255" rx="42" ry="22" fill="none" stroke="#0ea5e9" stroke-width="1.5" opacity="0.8"/>
-          <circle cx="340" cy="255" r="11" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
-          <circle cx="340" cy="255" r="4" fill="#38bdf8"/>
-        </svg>
-      </div>
-      <span class="font-bold text-sky-100 tracking-wider text-lg">CYJAN <span class="text-sky-400">IDS</span></span>
-    </div>
-    <div class="hidden md:flex items-center gap-8 text-sm text-slate-400">
+    <a href="#" class="flex items-center gap-2.5">
+      <img src="assets/logos/cyjan_logo_compact.svg" alt="CYJAN" class="w-7 h-7" style="filter: drop-shadow(0 0 12px rgba(14,165,233,0.4));" />
+      <span class="font-bold text-sky-100 text-sm uppercase" style="letter-spacing: 0.24em;">CY<span class="text-sky-400">JAN</span></span>
+    </a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
       <a href="#features" class="hover:text-sky-400 transition-colors">Features</a>
       <a href="#demo" class="hover:text-sky-400 transition-colors">Live Demo</a>
       <a href="#architecture" class="hover:text-sky-400 transition-colors">Architecture</a>
@@ -118,11 +116,9 @@
       <a href="#opensource" class="hover:text-sky-400 transition-colors">Open Source</a>
     </div>
     <a href="https://github.com/JxxKal/ids" target="_blank"
-       class="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-sky-300 border border-sky-700/50 hover:border-sky-500 hover:text-sky-200 transition-all">
-      <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-      </svg>
-      GitHub
+       class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all"
+       style="background: linear-gradient(135deg,#0ea5e9,#0284c7); box-shadow: 0 0 20px rgba(14,165,233,0.3);">
+      View on GitHub →
     </a>
   </div>
 </nav>
@@ -155,94 +151,61 @@
 </div>
 
 <!-- Hero -->
-<section class="relative min-h-screen flex items-center justify-center hex-bg hero-glow pt-32 pb-20">
-  <div class="absolute inset-0 overflow-hidden pointer-events-none">
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] rounded-full" style="background: radial-gradient(ellipse, rgba(14,165,233,0.04) 0%, transparent 70%);"></div>
+<section class="relative hex-bg hero-glow pt-32 pb-24 overflow-hidden">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] rounded-full" style="background: radial-gradient(ellipse, rgba(14,165,233,0.08) 0%, transparent 65%);"></div>
   </div>
 
-  <div class="relative max-w-5xl mx-auto px-6 text-center">
-    <!-- Logo -->
-    <div class="flex justify-center mb-8 fade-in">
-      <div class="w-48 h-48 md:w-64 md:h-64 relative">
-        <svg viewBox="0 0 680 520" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-[0_0_40px_rgba(14,165,233,0.3)]">
-          <defs>
-            <clipPath id="sc"><path d="M340 80 L460 130 L460 270 Q460 360 340 420 Q220 360 220 270 L220 130 Z"/></clipPath>
-            <linearGradient id="hg" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#0ea5e9" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#0ea5e9" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <g opacity="0.13" stroke="#0ea5e9" stroke-width="0.8" fill="none">
-            <polygon points="260,60 280,48 300,60 300,84 280,96 260,84"/><polygon points="300,60 320,48 340,60 340,84 320,96 300,84"/><polygon points="340,60 360,48 380,60 380,84 360,96 340,84"/><polygon points="380,60 400,48 420,60 420,84 400,96 380,84"/><polygon points="240,96 260,84 280,96 280,120 260,132 240,120"/><polygon points="280,96 300,84 320,96 320,120 300,132 280,120"/><polygon points="320,96 340,84 360,96 360,120 340,132 320,120"/><polygon points="360,96 380,84 400,96 400,120 380,132 360,120"/><polygon points="400,96 420,84 440,96 440,120 420,132 400,120"/><polygon points="430,252 450,240 470,252 470,276 450,288 430,276"/><polygon points="210,252 230,240 250,252 250,276 230,288 210,276"/>
-          </g>
-          <path d="M340 72 L468 126 L468 274 Q468 368 340 432 Q212 368 212 274 L212 126 Z" fill="url(#hg)" stroke="#0ea5e9" stroke-width="1.2" opacity="0.25"/>
-          <path d="M340 82 L458 132 L458 272 Q458 358 340 418 Q222 358 222 272 L222 132 Z" fill="#0f172a" stroke="#0ea5e9" stroke-width="2" opacity="0.97"/>
-          <g clip-path="url(#sc)" opacity="0.12" stroke="#38bdf8" stroke-width="0.7" fill="none">
-            <polygon points="300,110 320,98 340,110 340,134 320,146 300,134"/><polygon points="340,110 360,98 380,110 380,134 360,146 340,134"/><polygon points="280,146 300,134 320,146 320,170 300,182 280,170"/><polygon points="320,146 340,134 360,146 360,170 340,182 320,170"/><polygon points="360,146 380,134 400,146 400,170 380,182 360,170"/><polygon points="260,182 280,170 300,182 300,206 280,218 260,206"/><polygon points="300,182 320,170 340,182 340,206 320,218 300,206"/><polygon points="340,182 360,170 380,182 380,206 360,218 340,206"/><polygon points="380,182 400,170 420,182 420,206 400,218 380,206"/><polygon points="320,218 340,206 360,218 360,242 340,254 320,242"/><polygon points="300,254 320,242 340,254 340,278 320,290 300,278"/><polygon points="320,290 340,278 360,290 360,314 340,326 320,314"/>
-          </g>
-          <ellipse cx="340" cy="235" rx="52" ry="28" fill="none" stroke="#0ea5e9" stroke-width="1.5" opacity="0.7"/>
-          <circle cx="340" cy="235" r="18" fill="#0ea5e9" opacity="0.15"/>
-          <circle cx="340" cy="235" r="14" fill="none" stroke="#38bdf8" stroke-width="1.5"/>
-          <circle cx="340" cy="235" r="5" fill="#38bdf8"/>
-          <line x1="255" y1="235" x2="288" y2="235" stroke="#0ea5e9" stroke-width="1" opacity="0.5"/>
-          <line x1="392" y1="235" x2="425" y2="235" stroke="#0ea5e9" stroke-width="1" opacity="0.5"/>
-          <text x="340" y="308" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="44" font-weight="700" letter-spacing="10" fill="#e0f2fe">CYJAN</text>
-          <line x1="262" y1="318" x2="418" y2="318" stroke="#0ea5e9" stroke-width="0.8" opacity="0.5"/>
-          <text x="340" y="344" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="500" letter-spacing="3" fill="#7dd3fc">INTRUSION DETECTION SYSTEM</text>
-          <text x="340" y="456" text-anchor="middle" font-family="'Helvetica Neue', Arial, sans-serif" font-size="13" font-weight="400" letter-spacing="3" fill="#94a3b8">PROTECT · DETECT · RESPOND</text>
-        </svg>
+  <div class="relative max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+      <!-- LEFT: text + CTAs -->
+      <div class="fade-in">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 mb-6 rounded-full text-xs font-medium text-sky-300 uppercase border border-sky-700/30" style="letter-spacing: 0.24em; background: rgba(14,165,233,0.06);">
+          <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" style="box-shadow: 0 0 8px #22c55e;"></span>
+          v1.0 · MIT · OT-Sentrymode
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
+          <span class="gradient-text glow-cyan">Passive IDS.</span><br/>
+          <span class="gradient-text glow-cyan">For OT/ICS.</span>
+        </h1>
+
+        <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
+          Header-only packet analysis at the mirror port. Signature detection + ML anomaly engine + self-learning feedback loop.<br/>
+          <span class="text-sky-200">Zero payload access. Zero blind spots.</span>
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="/CYJAN_Marketing_Brochure.pdf" download
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all"
+             style="background: linear-gradient(135deg,#0ea5e9,#0284c7); box-shadow: 0 0 30px rgba(14,165,233,0.3);">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
+            Download Brochure
+          </a>
+          <a href="https://demo.cyjan.dev" target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sky-200 hover:text-sky-100 transition-all"
+             style="background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.45);">
+            Access Demosystem →
+          </a>
+          <a href="https://github.com/JxxKal/ids" target="_blank"
+             class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sky-300 border border-sky-700/50 hover:border-sky-500 hover:text-sky-200 transition-all">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            View on GitHub →
+          </a>
+        </div>
+
+        <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-slate-500">
+          <span>✓ Rust sniffer</span>
+          <span>✓ Isolation Forest</span>
+          <span>✓ Debian Live ISO</span>
+          <span>✓ MIT-licensed</span>
+        </div>
       </div>
-    </div>
 
-    <div class="space-y-6 fade-in" style="animation-delay: 0.2s;">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20">
-        <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span>
-        Open Source · MIT License
+      <!-- RIGHT: NetworkGlobe (mounted by React at end of body) -->
+      <div class="fade-in flex justify-center lg:justify-end" style="animation-delay: 0.2s;">
+        <div id="globe-root" class="w-full max-w-[480px] aspect-square"></div>
       </div>
-
-      <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-none">
-        <span class="gradient-text glow-cyan">Passive IDS</span><br/>
-        <span class="text-slate-300 text-4xl md:text-5xl font-light mt-2 block">for OT/ICS environments</span>
-      </h1>
-
-      <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
-        Header-only packet analysis at the mirror port. <br class="hidden md:block"/>
-        Signature detection + ML anomaly engine + self-learning feedback loop.<br/>
-        <span class="text-sky-400 font-medium">Zero payload access. Zero blind spots.</span>
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-        <a href="#quickstart"
-           class="px-8 py-3.5 rounded-xl font-semibold text-white transition-all"
-           style="background: linear-gradient(135deg, #0ea5e9, #0284c7); box-shadow: 0 0 30px rgba(14,165,233,0.3);">
-          Quick Start
-        </a>
-        <a href="https://github.com/JxxKal/ids" target="_blank"
-           class="px-8 py-3.5 rounded-xl font-semibold text-sky-300 border border-sky-700/60 hover:border-sky-500 hover:text-sky-200 transition-all flex items-center justify-center gap-2">
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          View on GitHub
-        </a>
-        <a href="/CYJAN_Marketing_Brochure.pdf" download
-           class="px-8 py-3.5 rounded-xl font-semibold text-slate-300 border border-slate-600/60 hover:border-slate-400 hover:text-slate-100 transition-all flex items-center justify-center gap-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v2a2 2 0 002 2h14a2 2 0 002-2v-2"/>
-          </svg>
-          Brochure PDF
-        </a>
-      </div>
-    </div>
-
-    <!-- Protocol badges -->
-    <div class="flex flex-wrap justify-center gap-2 mt-12 fade-in" style="animation-delay: 0.4s;">
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">SCADA</span>
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">Modbus TCP</span>
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">DNP3</span>
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">EtherNet/IP</span>
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">BACnet</span>
-      <span class="tag-ot px-3 py-1 rounded-full text-xs font-mono font-medium">S7</span>
-      <span class="px-3 py-1 rounded-full text-xs font-mono font-medium border border-sky-700/40 text-sky-400 bg-sky-900/20">TCP/IP</span>
-      <span class="px-3 py-1 rounded-full text-xs font-mono font-medium border border-sky-700/40 text-sky-400 bg-sky-900/20">DNS</span>
-      <span class="px-3 py-1 rounded-full text-xs font-mono font-medium border border-sky-700/40 text-sky-400 bg-sky-900/20">ICMP</span>
     </div>
   </div>
 </section>
@@ -765,6 +728,217 @@
     active.classList.remove('border-slate-700', 'text-slate-400');
     active.classList.add('border-sky-500', 'text-sky-300', 'bg-sky-900/30');
   }
+</script>
+
+<!-- NetworkGlobe hero component (from JxxKal/ids design-system, ui_kits/website/NetworkGlobe.jsx) -->
+<script type="text/babel" data-presets="react">
+  const { useEffect, useRef, useState } = React;
+
+  function NetworkGlobe({ size = 480 }) {
+    const [frame, setFrame] = useState(0);
+    const [rotation, setRotation] = useState(0);
+    const [conns, setConns] = useState([]);
+    const [pulses, setPulses] = useState([]);
+
+    const HOSTS = [
+      { id:'plc-01', lat:52,  lon: 13, kind:'plc',   label:'PLC·01' },
+      { id:'hmi-02', lat:48,  lon:  9, kind:'hmi',   label:'HMI·02' },
+      { id:'scada',  lat:40,  lon: -3, kind:'scada', label:'SCADA·core' },
+      { id:'rtu-07', lat:37,  lon:-74, kind:'rtu',   label:'RTU·07' },
+      { id:'eng-11', lat:35,  lon:139, kind:'eng',   label:'ENG·11' },
+      { id:'plc-12', lat: 1,  lon:103, kind:'plc',   label:'PLC·12' },
+      { id:'rtu-19', lat:-23, lon:-46, kind:'rtu',   label:'RTU·19' },
+      { id:'hmi-22', lat:-33, lon:151, kind:'hmi',   label:'HMI·22' },
+      { id:'ot-gw',  lat:55,  lon:-37, kind:'gw',    label:'OT·gw'  },
+      { id:'ids',    lat:51,  lon: 10, kind:'ids',   label:'CYJAN'  },
+    ];
+
+    useEffect(() => {
+      let raf;
+      const tick = () => {
+        setFrame(f => f + 1);
+        setRotation(r => (r + 0.15) % 360);
+        raf = requestAnimationFrame(tick);
+      };
+      raf = requestAnimationFrame(tick);
+      return () => cancelAnimationFrame(raf);
+    }, []);
+
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setConns(prev => {
+          const now = Date.now();
+          const alive = prev.filter(c => now - c.born < c.ttl);
+          if (alive.length < 5 && Math.random() > 0.2) {
+            const a = HOSTS[Math.floor(Math.random() * HOSTS.length)];
+            let b = HOSTS[Math.floor(Math.random() * HOSTS.length)];
+            while (b.id === a.id) b = HOSTS[Math.floor(Math.random() * HOSTS.length)];
+            const protocols = ['TCP','TCP','TCP','UDP','UDP','ICMP'];
+            const proto = protocols[Math.floor(Math.random() * protocols.length)];
+            const threat = Math.random() > 0.8;
+            alive.push({
+              id: `c${now}-${Math.random().toString(36).slice(2,5)}`,
+              a: a.id, b: b.id, proto, threat,
+              born: now, ttl: 1800 + Math.random() * 1800,
+            });
+          }
+          return alive;
+        });
+        if (Math.random() > 0.7) {
+          setPulses(prev => [...prev.slice(-3), { id: Date.now(), born: Date.now() }]);
+        }
+      }, 600);
+      return () => clearInterval(interval);
+    }, []);
+
+    const project = (lat, lon) => {
+      const rotLon = lon + rotation;
+      const latRad = lat * Math.PI / 180;
+      const lonRad = rotLon * Math.PI / 180;
+      const x = Math.cos(latRad) * Math.sin(lonRad);
+      const y = -Math.sin(latRad);
+      const z = Math.cos(latRad) * Math.cos(lonRad);
+      return { x, y, z, visible: z > -0.3 };
+    };
+
+    const R = size / 2 - 40;
+    const cx = size / 2, cy = size / 2;
+
+    const protoColor = p => p === 'TCP' ? '#38bdf8' : p === 'UDP' ? '#fb923c' : '#a78bfa';
+    const kindColor = k => ({
+      plc:'#38bdf8', hmi:'#7dd3fc', scada:'#0ea5e9',
+      rtu:'#38bdf8', eng:'#7dd3fc', gw:'#94a3b8',
+      ids:'#22d3ee',
+    })[k] || '#94a3b8';
+
+    const points = HOSTS.map(h => ({ ...h, p: project(h.lat, h.lon) }));
+    const pointById = Object.fromEntries(points.map(p => [p.id, p]));
+
+    return (
+      <div style={{ position:'relative', width:size, height:size, maxWidth:'100%' }}>
+        <svg width="100%" height="100%" viewBox={`0 0 ${size} ${size}`}
+             style={{ filter:'drop-shadow(0 0 60px rgba(14,165,233,0.25))' }}>
+          <defs>
+            <radialGradient id="globeFill">
+              <stop offset="0%" stopColor="rgba(14,165,233,0.08)"/>
+              <stop offset="70%" stopColor="rgba(14,165,233,0.02)"/>
+              <stop offset="100%" stopColor="rgba(2,6,23,0.0)"/>
+            </radialGradient>
+            <radialGradient id="globeGlow">
+              <stop offset="0%" stopColor="rgba(14,165,233,0)"/>
+              <stop offset="90%" stopColor="rgba(14,165,233,0.10)"/>
+              <stop offset="100%" stopColor="rgba(14,165,233,0)"/>
+            </radialGradient>
+          </defs>
+
+          <circle cx={cx} cy={cy} r={R + 30} fill="url(#globeGlow)" />
+          <circle cx={cx} cy={cy} r={R} fill="url(#globeFill)" stroke="rgba(14,165,233,0.3)" strokeWidth="1"/>
+
+          {[-60,-30,0,30,60].map(lat => {
+            const latRad = lat * Math.PI/180;
+            const ry = Math.abs(R * Math.cos(latRad)) * 0.2;
+            const rx = R * Math.cos(latRad);
+            const yOff = -R * Math.sin(latRad);
+            return (
+              <ellipse key={lat} cx={cx} cy={cy + yOff} rx={rx} ry={ry}
+                       fill="none" stroke="rgba(56,189,248,0.18)" strokeWidth="0.6"/>
+            );
+          })}
+
+          {[0,30,60,90,120,150].map(lon => {
+            const rotLon = (lon + rotation) % 180;
+            const rad = rotLon * Math.PI/180;
+            const rx = Math.abs(R * Math.sin(rad));
+            return (
+              <ellipse key={lon} cx={cx} cy={cy} rx={rx} ry={R}
+                       fill="none" stroke="rgba(56,189,248,0.12)" strokeWidth="0.5"/>
+            );
+          })}
+
+          {pulses.map(p => {
+            const age = (Date.now() - p.born) / 2000;
+            if (age > 1) return null;
+            return (
+              <circle key={p.id} cx={cx} cy={cy} r={R * age}
+                      fill="none" stroke="rgba(34,211,238,0.25)"
+                      strokeWidth={1.5 * (1-age)} opacity={1 - age}/>
+            );
+          })}
+
+          {conns.map(c => {
+            const pa = pointById[c.a].p, pb = pointById[c.b].p;
+            if (!pa.visible && !pb.visible) return null;
+            const ax = cx + pa.x * R, ay = cy + pa.y * R;
+            const bx = cx + pb.x * R, by = cy + pb.y * R;
+            const mx = (ax + bx) / 2, my = (ay + by) / 2;
+            const dx = bx - ax, dy = by - ay;
+            const dist = Math.hypot(dx, dy);
+            const lift = Math.min(dist * 0.3, 70);
+            const cpX = mx + (-dy / dist) * lift * 0.5;
+            const cpY = my + (dx / dist) * lift * 0.5 - lift * 0.3;
+            const age = (Date.now() - c.born) / c.ttl;
+            const fade = age < 0.2 ? age/0.2 : age > 0.8 ? (1-age)/0.2 : 1;
+            const stroke = c.threat ? '#ef4444' : protoColor(c.proto);
+            const strokeOp = c.threat ? 0.9 : 0.55;
+            return (
+              <g key={c.id} opacity={fade}>
+                <path d={`M ${ax} ${ay} Q ${cpX} ${cpY} ${bx} ${by}`}
+                      fill="none" stroke={stroke} strokeOpacity={strokeOp}
+                      strokeWidth={c.threat ? 1.8 : 0.9}
+                      strokeDasharray={c.threat ? "4 3" : "none"} />
+                {(() => {
+                  const t = (age * 2) % 1;
+                  const x = (1-t)*(1-t)*ax + 2*(1-t)*t*cpX + t*t*bx;
+                  const y = (1-t)*(1-t)*ay + 2*(1-t)*t*cpY + t*t*by;
+                  return <circle cx={x} cy={y} r={c.threat ? 3 : 2} fill={stroke}
+                                 style={{ filter:`drop-shadow(0 0 6px ${stroke})` }}/>;
+                })()}
+              </g>
+            );
+          })}
+
+          {points.map(h => {
+            if (!h.p.visible) return null;
+            const x = cx + h.p.x * R, y = cy + h.p.y * R;
+            const z = h.p.z;
+            const opacity = 0.4 + z * 0.6;
+            const r = h.kind === 'ids' ? 5 : 3;
+            const color = kindColor(h.kind);
+            return (
+              <g key={h.id} opacity={opacity}>
+                {h.kind === 'ids' && (
+                  <circle cx={x} cy={y} r={r + 6 + Math.sin(frame*0.1) * 2}
+                          fill="none" stroke={color} strokeOpacity="0.4" strokeWidth="1"/>
+                )}
+                <circle cx={x} cy={y} r={r} fill={color}
+                        style={{ filter:`drop-shadow(0 0 ${r*2}px ${color})` }}/>
+                {(h.kind === 'ids' || z > 0.7) && (
+                  <text x={x + 8} y={y + 3} fill="#7dd3fc"
+                        fontFamily="JetBrains Mono" fontSize="9" opacity={z}>
+                    {h.label}
+                  </text>
+                )}
+              </g>
+            );
+          })}
+        </svg>
+
+        <div style={{
+          position:'absolute', bottom:-6, left:0, right:0,
+          display:'flex', justifyContent:'center', gap:16,
+          fontFamily:'JetBrains Mono', fontSize:10, color:'#64748b',
+        }}>
+          <span><span style={{ color:'#38bdf8' }}>●</span> TCP</span>
+          <span><span style={{ color:'#fb923c' }}>●</span> UDP</span>
+          <span><span style={{ color:'#a78bfa' }}>●</span> ICMP</span>
+          <span><span style={{ color:'#ef4444' }}>●</span> threat</span>
+          <span style={{ color:'#22d3ee' }}>◎ CYJAN IDS</span>
+        </div>
+      </div>
+    );
+  }
+
+  ReactDOM.createRoot(document.getElementById('globe-root')).render(<NetworkGlobe size={480} />);
 </script>
 </body>
 </html>
