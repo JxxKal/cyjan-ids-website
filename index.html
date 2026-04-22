@@ -141,7 +141,7 @@
     </a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
       <a href="#features" class="hover:text-sky-400 transition-colors">Features</a>
-      <a href="#demo" class="hover:text-sky-400 transition-colors">Live Demo</a>
+      <a href="#demo" class="hover:text-sky-400 transition-colors">The App at a Glance</a>
       <a href="#architecture" class="hover:text-sky-400 transition-colors">Architecture</a>
       <a href="#quickstart" class="hover:text-sky-400 transition-colors">Quick Start</a>
       <a href="#opensource" class="hover:text-sky-400 transition-colors">Open Source</a>
@@ -415,16 +415,16 @@
   </div>
 </section>
 
-<!-- Live Demo / App Preview -->
+<!-- The App at a Glance / App Preview -->
 <section id="demo" class="py-24 bg-slate-950/60">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-green-700/50 text-green-400 bg-green-900/20 mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span>
-        PRODUKTIVE INSTALLATION
+        LIVE DEPLOYMENT
       </div>
-      <h2 class="text-4xl md:text-5xl font-black gradient-text">Die App in Aktion.</h2>
-      <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">Echte Alerts, echte Netzwerke — Screenshots aus einer laufenden CYJAN IDS Instanz.</p>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">The App at a Glance.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">Real alerts, real networks — screenshots captured from a live CYJAN IDS deployment.</p>
     </div>
 
     <!-- Tab switcher -->
@@ -435,11 +435,11 @@
       </button>
       <button onclick="showTab('tab-hosts')" id="btn-hosts"
         class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
-        Host-Inventar
+        Host Inventory
       </button>
       <button onclick="showTab('tab-networks')" id="btn-networks"
         class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
-        Netzwerke
+        Networks
       </button>
     </div>
 
@@ -461,13 +461,13 @@
       </div>
 
       <div id="tab-dashboard" class="demo-tab">
-        <img src="screenshots/dashboard.png" alt="CYJAN IDS Dashboard mit Live-Alerts" class="w-full" loading="lazy" />
+        <img src="screenshots/dashboard.png" alt="CYJAN IDS dashboard with a live alert feed" class="w-full" loading="lazy" />
       </div>
       <div id="tab-hosts" class="demo-tab hidden">
-        <img src="screenshots/hosts.png" alt="CYJAN IDS Host-Inventar" class="w-full" loading="lazy" />
+        <img src="screenshots/hosts.png" alt="CYJAN IDS host inventory" class="w-full" loading="lazy" />
       </div>
       <div id="tab-networks" class="demo-tab hidden">
-        <img src="screenshots/networks.png" alt="CYJAN IDS Netzwerkverwaltung" class="w-full" loading="lazy" />
+        <img src="screenshots/networks.png" alt="CYJAN IDS network inventory" class="w-full" loading="lazy" />
       </div>
     </div>
 
@@ -478,21 +478,21 @@
           <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
           <span class="font-semibold text-sky-100">Live Alert Feed</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">Echtzeit-WebSocket-Stream aller Alarme — mit Schweregrad, Quelle, Ziel, Tags und direktem PCAP-Download.</p>
+        <p class="text-slate-400 leading-relaxed">Real-time WebSocket stream of every alert — severity, source, destination, tags, and one-click PCAP download.</p>
       </div>
       <div class="card-bg rounded-xl p-5 glow-border text-sm">
         <div class="flex items-center gap-2 mb-2">
           <span class="w-2 h-2 rounded-full bg-sky-400"></span>
           <span class="font-semibold text-sky-100">Threat Level Gauge</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">Aggregierter Bedrohungsindex in Echtzeit — C/H/M/L-Aufschlüsselung für sofortigen Überblick über die Netzwerkgesundheit.</p>
+        <p class="text-slate-400 leading-relaxed">Live aggregated threat index — critical / high / medium / low breakdown for an instant read on network health.</p>
       </div>
       <div class="card-bg rounded-xl p-5 glow-border text-sm">
         <div class="flex items-center gap-2 mb-2">
           <span class="w-2 h-2 rounded-full bg-purple-400"></span>
           <span class="font-semibold text-sky-100">Host Trust System</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">28 bekannte Hosts, automatisch angereichert via DNS und GeoIP — unbekannte Geräte lösen sofort einen Alert aus.</p>
+        <p class="text-slate-400 leading-relaxed">Every host auto-enriched via DNS and GeoIP — unknown devices trigger an alert the moment they appear.</p>
       </div>
     </div>
   </div>
