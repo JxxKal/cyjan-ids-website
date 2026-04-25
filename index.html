@@ -411,6 +411,36 @@
         <p class="text-slate-400 text-sm leading-relaxed">Plug in, boot, done. First-boot wizard configures interface, IPs, and passwords. Automatic system updates with <code class="text-sky-400 font-mono text-xs">ids-update</code>. No OS admin skills needed.</p>
       </div>
 
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Automatic CMDB Sync</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Bidirectional iTop / TeemIP integration — imports subnets, hosts, and CI records into the trust system, and pushes newly-discovered unknown hosts back to the CMDB. Manual entries and DNS overrides are preserved by priority; CMDB assets get the <span class="text-sky-300">✓ iTop</span> badge.</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Full-Blown Enrichment Service</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Every alert is post-processed with reverse DNS, ICMP reachability, MaxMind GeoIP/ASN, known-network containment, and host-trust lookup. Redis-cached for sub-second response and streamed live over WebSocket as <code class="text-sky-400 font-mono text-xs">alert_enriched</code> updates.</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Rich FastAPI · OpenAPI</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Complete REST surface with interactive Swagger at <code class="text-sky-400 font-mono text-xs">/api/docs</code>, ReDoc, and an OpenAPI JSON spec. JWT plus SAML 2.0 auth, long-lived API tokens, CSV bulk endpoints, and live WebSocket events — built for SIEM, automation, and third-party integration.</p>
+      </div>
+
     </div>
   </div>
 </section>
