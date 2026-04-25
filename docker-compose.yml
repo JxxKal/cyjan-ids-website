@@ -9,4 +9,5 @@ services:
       - ./assets:/usr/share/nginx/html/assets:ro
       - ./design-system:/usr/share/nginx/html/design-system:ro
       - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./security-headers.conf:/etc/nginx/snippets/security-headers.conf:ro
     restart: unless-stopped
