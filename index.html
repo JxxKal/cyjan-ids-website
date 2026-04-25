@@ -10,7 +10,7 @@
   <link rel="alternate" hreflang="de" href="https://www.cyjan.dev/de/" />
   <link rel="alternate" hreflang="x-default" href="https://www.cyjan.dev/" />
   <link rel="stylesheet" href="/assets/css/fonts.css?v=3" />
-  <link rel="stylesheet" href="/assets/css/tailwind.css?v=3" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=4" />
   <style>
     * { box-sizing: border-box; }
 
@@ -189,8 +189,14 @@
   </div>
 </nav>
 
-<!-- Alert ticker (decorative — hidden on mobile to avoid noise) -->
+<!-- Alert ticker (decorative sample data — hidden on mobile to avoid noise) -->
 <div class="hidden sm:block fixed top-[65px] w-full z-40 overflow-hidden border-b border-sky-900/20" style="background: rgba(14,165,233,0.05);">
+  <div class="flex items-center">
+    <span class="shrink-0 inline-flex items-center gap-2 px-3 py-1.5 text-[10px] font-mono uppercase tracking-[0.18em] text-amber-300 bg-amber-900/25 border-r border-amber-700/40">
+      <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+      Demo Traffic
+    </span>
+    <div class="flex-1 overflow-hidden">
   <div class="flex ticker whitespace-nowrap py-1.5">
     <span class="inline-flex gap-8 px-4 text-xs font-mono text-sky-600">
       <span><span class="text-red-400">HIGH</span> · SCAN_001 · 192.168.1.10 → 10.0.0.1 · TCP SYN Portscan</span>
@@ -213,6 +219,8 @@
       <span class="text-sky-800">|</span>
       <span><span class="text-purple-400">EXT</span> · IRMA · DNP3_ANOMALY · External source · high severity</span>
     </span>
+  </div>
+    </div>
   </div>
 </div>
 
