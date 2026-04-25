@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CYJAN IDS – The OT Sentrymode</title>
-  <meta name="description" content="Passive network intrusion detection for OT/ICS environments. Real-time alerts, ML anomaly detection, self-learning feedback loop. Open source." />
-  <link rel="canonical" href="https://www.cyjan.dev/" />
+  <title>CYJAN IDS – Der OT-Sentrymode</title>
+  <meta name="description" content="Passives Network Intrusion Detection für OT/ICS-Umgebungen. Live-Alarme, ML-Anomalieerkennung, selbstlernender Feedback-Loop. Open Source." />
+  <link rel="canonical" href="https://www.cyjan.dev/de/" />
   <link rel="alternate" hreflang="en" href="https://www.cyjan.dev/" />
   <link rel="alternate" hreflang="de" href="https://www.cyjan.dev/de/" />
   <link rel="alternate" hreflang="x-default" href="https://www.cyjan.dev/" />
@@ -143,24 +143,24 @@
       <span class="font-bold text-sky-100 text-sm uppercase" style="letter-spacing: 0.24em;">CY<span class="text-sky-400">JAN</span></span>
     </a>
     <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-      <a href="#features" class="hover:text-sky-400 transition-colors">Features</a>
-      <a href="#demo" class="hover:text-sky-400 transition-colors">The App at a Glance</a>
-      <a href="#architecture" class="hover:text-sky-400 transition-colors">Architecture</a>
-      <a href="#quickstart" class="hover:text-sky-400 transition-colors">Quick Start</a>
+      <a href="#features" class="hover:text-sky-400 transition-colors">Funktionen</a>
+      <a href="#demo" class="hover:text-sky-400 transition-colors">Live-Eindruck</a>
+      <a href="#architecture" class="hover:text-sky-400 transition-colors">Architektur</a>
+      <a href="#quickstart" class="hover:text-sky-400 transition-colors">Schnellstart</a>
       <a href="#opensource" class="hover:text-sky-400 transition-colors">Open Source</a>
     </div>
     <div class="flex items-center gap-3">
-      <span class="hidden md:inline-flex font-mono text-xs text-slate-500 select-none" aria-label="Language">
-        <span class="text-sky-300">EN</span>
+      <span class="hidden md:inline-flex font-mono text-xs text-slate-500 select-none" aria-label="Sprache">
+        <a href="/" class="hover:text-sky-300 transition-colors">EN</a>
         <span class="px-1 text-slate-700">/</span>
-        <a href="/de/" class="hover:text-sky-300 transition-colors">DE</a>
+        <span class="text-sky-300">DE</span>
       </span>
       <a href="https://github.com/JxxKal/ids" target="_blank" rel="noopener noreferrer"
          class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white transition-all"
          style="background: linear-gradient(135deg,#0ea5e9,#0284c7); box-shadow: 0 0 20px rgba(14,165,233,0.3);">
-        View on GitHub →
+        Auf GitHub ansehen →
       </a>
-      <button id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
+      <button id="navToggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu"
               class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-sky-900/40 text-sky-300 hover:bg-sky-900/20 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
       </button>
@@ -168,16 +168,16 @@
   </div>
   <div id="mobileMenu" class="hidden md:hidden border-t border-sky-900/20" style="background: rgba(2,6,23,0.95);">
     <div class="px-6 py-5 flex flex-col gap-4 text-sm font-medium text-slate-300">
-      <a href="#features" class="nav-mobile hover:text-sky-300 transition-colors">Features</a>
-      <a href="#demo" class="nav-mobile hover:text-sky-300 transition-colors">The App at a Glance</a>
-      <a href="#architecture" class="nav-mobile hover:text-sky-300 transition-colors">Architecture</a>
-      <a href="#quickstart" class="nav-mobile hover:text-sky-300 transition-colors">Quick Start</a>
+      <a href="#features" class="nav-mobile hover:text-sky-300 transition-colors">Funktionen</a>
+      <a href="#demo" class="nav-mobile hover:text-sky-300 transition-colors">Live-Eindruck</a>
+      <a href="#architecture" class="nav-mobile hover:text-sky-300 transition-colors">Architektur</a>
+      <a href="#quickstart" class="nav-mobile hover:text-sky-300 transition-colors">Schnellstart</a>
       <a href="#opensource" class="nav-mobile hover:text-sky-300 transition-colors">Open Source</a>
       <div class="border-t border-sky-900/20 pt-4 flex items-center justify-between">
         <span class="font-mono text-xs text-slate-500">
-          <span class="text-sky-300">EN</span>
+          <a href="/" class="hover:text-sky-300 transition-colors">EN</a>
           <span class="px-1 text-slate-700">/</span>
-          <a href="/de/" class="hover:text-sky-300 transition-colors">DE</a>
+          <span class="text-sky-300">DE</span>
         </span>
         <a href="https://github.com/JxxKal/ids" target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-semibold text-white"
@@ -189,7 +189,7 @@
   </div>
 </nav>
 
-<!-- Alert ticker (decorative — hidden on mobile to avoid noise) -->
+<!-- Alarm-Ticker (dekorativ — auf Mobile ausgeblendet) -->
 <div class="hidden sm:block fixed top-[65px] w-full z-40 overflow-hidden border-b border-sky-900/20" style="background: rgba(14,165,233,0.05);">
   <div class="flex ticker whitespace-nowrap py-1.5">
     <span class="inline-flex gap-8 px-4 text-xs font-mono text-sky-600">
@@ -232,45 +232,45 @@
         </div>
 
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
-          <span class="gradient-text glow-cyan">Passive IDS.</span><br/>
-          <span class="gradient-text glow-cyan">For OT/ICS.</span>
+          <span class="gradient-text glow-cyan">Passives IDS.</span><br/>
+          <span class="gradient-text glow-cyan">Für OT/ICS.</span>
         </h1>
 
         <p class="text-lg text-slate-400 leading-relaxed mb-8 max-w-xl">
-          Header-only packet analysis at the mirror port. Signature detection + ML anomaly engine + self-learning feedback loop.<br/>
-          <span class="text-sky-200">Zero payload access. Zero blind spots.</span>
+          Header-only Paketanalyse am Mirror-Port. Signatur-Erkennung + ML-Anomalie-Engine + selbstlernender Feedback-Loop.<br/>
+          <span class="text-sky-200">Kein Payload-Zugriff. Keine blinden Flecken.</span>
         </p>
 
         <div class="flex flex-wrap gap-3 mb-10">
-          <a href="/design-system/brochure/en/"
+          <a href="/design-system/brochure/"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all"
              style="background: linear-gradient(135deg,#0ea5e9,#0284c7); box-shadow: 0 0 30px rgba(14,165,233,0.3);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
-            Download Brochure
+            Broschüre laden
           </a>
           <a href="https://github.com/JxxKal/ids/releases/latest" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all"
              style="background: linear-gradient(135deg,#10b981,#059669); box-shadow: 0 0 30px rgba(16,185,129,0.25);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 4.5h13.5a.75.75 0 01.75.75v3a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75v-3a.75.75 0 01.75-.75zM5.25 11.25h13.5a.75.75 0 01.75.75v3a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75v-3a.75.75 0 01.75-.75zM3 18a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 18z"/></svg>
-            Download Latest ISO
+            Aktuelles ISO laden
           </a>
           <a href="https://demo.cyjan.dev" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sky-200 hover:text-sky-100 transition-all"
              style="background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.45);">
-            Access Demosystem →
+            Zum Demosystem →
           </a>
           <a href="https://github.com/JxxKal/ids" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-sky-300 border border-sky-700/50 hover:border-sky-500 hover:text-sky-200 transition-all">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            View on GitHub →
+            Auf GitHub ansehen →
           </a>
         </div>
 
         <div class="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-slate-500">
-          <span>✓ Rust sniffer</span>
+          <span>✓ Rust-Sniffer</span>
           <span>✓ Isolation Forest</span>
           <span>✓ Debian Live ISO</span>
-          <span>✓ MIT-licensed</span>
+          <span>✓ MIT-Lizenz</span>
         </div>
       </div>
 
@@ -334,15 +334,15 @@
     </div>
     <div>
       <div class="text-3xl font-black text-sky-400 font-mono">128B</div>
-      <div class="text-sm text-slate-500 mt-1">Header-only snaplen</div>
+      <div class="text-sm text-slate-500 mt-1">Header-only Snaplen</div>
     </div>
     <div>
       <div class="text-3xl font-black text-sky-400 font-mono">~40k</div>
-      <div class="text-sm text-slate-500 mt-1">Suricata ET rules</div>
+      <div class="text-sm text-slate-500 mt-1">Suricata-ET-Regeln</div>
     </div>
     <div>
       <div class="text-3xl font-black text-sky-400 font-mono">0</div>
-      <div class="text-sm text-slate-500 mt-1">Payload access</div>
+      <div class="text-sm text-slate-500 mt-1">Payload-Zugriff</div>
     </div>
   </div>
 </div>
@@ -352,10 +352,10 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">
-        CAPABILITIES
+        FUNKTIONEN
       </div>
-      <h2 class="text-4xl md:text-5xl font-black gradient-text">Built for the real world.</h2>
-      <p class="text-slate-400 mt-4 text-lg max-w-xl mx-auto">Designed specifically for operational technology networks where availability beats everything else.</p>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">Gebaut für den Ernstfall.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-xl mx-auto">Speziell entwickelt für OT-Netze, in denen Verfügbarkeit über allem steht.</p>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -368,8 +368,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Passive Mirror-Port Analysis</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Zero network impact. Rust-based sniffer with AF_PACKET/TPACKET_V3 captures traffic at line rate — headers only, no payload, no decryption.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Passive Mirror-Port-Analyse</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Keinerlei Auswirkung auf das Netzwerk. Rust-basierter Sniffer mit AF_PACKET/TPACKET_V3 erfasst den Traffic in Wire-Speed — nur Header, kein Payload, keine Entschlüsselung.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -378,8 +378,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">ML Anomaly Detection &amp; Suppression</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Isolation Forest with a self-learning feedback loop. Mark alerts as true/false positives and the model retrains automatically. Adaptive suppression downgrades repeat hits on the same rule and bidirectional connection — operators only see real attack patterns, not noise.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">ML-Anomalieerkennung &amp; -Unterdrückung</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Isolation Forest mit selbstlernendem Feedback-Loop. Alarme als True- oder False-Positive markieren und das Modell trainiert automatisch nach. Adaptive Suppression stuft Wiederholungen auf gleicher Regel und bidirektionaler Verbindung herab — Operatoren sehen nur echte Angriffsmuster, kein Rauschen.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -388,8 +388,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">OT/ICS Protocol Coverage</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Pre-configured rule sets for Modbus TCP, DNP3, EtherNet/IP, BACnet, and S7. OT tags get orange highlighting and auto-escalated severity.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">OT/ICS-Protokollabdeckung</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Vorkonfigurierte Regelsätze für Modbus TCP, DNP3, EtherNet/IP, BACnet und S7. OT-Tags werden orange hervorgehoben und in der Schwere automatisch eskaliert.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -398,8 +398,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Real-time WebSocket Dashboard</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Live alert feed with threat-level gauge, connection graph, PCAP download per alert, enrichment (GeoIP, ASN, DNS), and CSV export.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Echtzeit-Dashboard via WebSocket</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Live-Alarmfeed mit Threat-Level-Anzeige, Verbindungsgraph, PCAP-Download je Alarm, Anreicherung (GeoIP, ASN, DNS) und CSV-Export.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -408,8 +408,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Suricata Integration</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Optional parallel detection engine. ~40,000 Emerging Threats rules plus OT/ICS rule sets from Digital Bond and Positive Technologies — live reloadable.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Suricata-Integration</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Optionale parallele Detection Engine. ~40.000 Emerging-Threats-Regeln plus OT/ICS-Regelsätze von Digital Bond und Positive Technologies — im laufenden Betrieb nachladbar.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -418,8 +418,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">IRMA Bridge</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Integrates external IRMA IDS alerts into the unified feed. REST polling with automatic token renewal — external alarms appear as first-class citizens.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">IRMA-Bridge</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Integriert externe IRMA-IDS-Alarme in den gemeinsamen Feed. REST-Polling mit automatischer Token-Erneuerung — fremde Alarme erscheinen als gleichwertige Einträge.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -428,8 +428,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">PCAP Evidence Store</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Every alert stores a Wireshark-compatible PCAP (headers only) in MinIO — download directly from the alert detail view for forensic investigation.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">PCAP-Beweisspeicher</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Jeder Alarm legt eine Wireshark-kompatible PCAP-Datei (nur Header) in MinIO ab — direkt aus der Alarmdetailansicht für die forensische Auswertung herunterladbar.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -438,8 +438,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Host Trust System</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Known network and host inventory with CSV bulk import, GeoIP/ASN enrichment, and automatic unknown host alerts — with Redis caching for speed.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Host-Trust-System</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Inventar bekannter Netze und Hosts mit CSV-Massenimport, GeoIP/ASN-Anreicherung und automatischen Alarmen bei unbekannten Hosts — Redis-cached für Geschwindigkeit.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -449,7 +449,7 @@
           </svg>
         </div>
         <h3 class="font-bold text-sky-100 text-lg mb-2">Debian Live ISO</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Plug in, boot, done. First-boot wizard configures interface, IPs, and passwords. Automatic system updates with <code class="text-sky-400 font-mono text-xs">ids-update</code>. No OS admin skills needed.</p>
+        <p class="text-slate-400 text-sm leading-relaxed">Einstecken, booten, fertig. Der First-Boot-Wizard konfiguriert Interface, IPs und Passwörter. Automatische System-Updates per <code class="text-sky-400 font-mono text-xs">ids-update</code>. Kein OS-Adminwissen nötig.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -458,8 +458,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Automatic CMDB Sync</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Bidirectional iTop / TeemIP integration — imports subnets, hosts, and CI records into the trust system, and pushes newly-discovered unknown hosts back to the CMDB. Manual entries and DNS overrides are preserved by priority; CMDB assets get the <span class="text-sky-300">✓ iTop</span> badge.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Automatischer CMDB-Sync</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Bidirektionale iTop-/TeemIP-Integration — importiert Subnetze, Hosts und CI-Datensätze ins Trust-System und schreibt neu entdeckte unbekannte Hosts zurück in die CMDB. Manuelle Einträge und DNS-Overrides werden nach Priorität bewahrt; CMDB-Assets bekommen das <span class="text-sky-300">✓ iTop</span>-Badge.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -468,8 +468,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Full-Blown Enrichment Service</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Every alert is post-processed with reverse DNS, ICMP reachability, MaxMind GeoIP/ASN, known-network containment, and host-trust lookup. Redis-cached for sub-second response and streamed live over WebSocket as <code class="text-sky-400 font-mono text-xs">alert_enriched</code> updates.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Vollständiger Enrichment-Service</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Jeder Alarm wird nachgelagert um Reverse-DNS, ICMP-Erreichbarkeit, MaxMind GeoIP/ASN, Known-Network-Lookup und Host-Trust-Prüfung angereichert. Redis-cached für Sub-Sekunden-Latenz, live über WebSocket als <code class="text-sky-400 font-mono text-xs">alert_enriched</code>-Update gestreamt.</p>
       </div>
 
       <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
@@ -478,8 +478,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
           </svg>
         </div>
-        <h3 class="font-bold text-sky-100 text-lg mb-2">Rich FastAPI · OpenAPI</h3>
-        <p class="text-slate-400 text-sm leading-relaxed">Complete REST surface with interactive Swagger at <code class="text-sky-400 font-mono text-xs">/api/docs</code>, ReDoc, and an OpenAPI JSON spec. JWT plus SAML 2.0 auth, long-lived API tokens, CSV bulk endpoints, and live WebSocket events — built for SIEM, automation, and third-party integration.</p>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Umfassende FastAPI · OpenAPI</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Vollständige REST-Oberfläche mit interaktivem Swagger unter <code class="text-sky-400 font-mono text-xs">/api/docs</code>, ReDoc und OpenAPI-JSON-Spec. JWT plus SAML 2.0, lange API-Tokens, CSV-Bulk-Endpunkte und Live-WebSocket-Events — gebaut für SIEM, Automatisierung und Drittanbieter-Anbindung.</p>
       </div>
 
     </div>
@@ -492,25 +492,25 @@
     <div class="text-center mb-16">
       <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-green-700/50 text-green-400 bg-green-900/20 mb-4">
         <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot"></span>
-        LIVE DEPLOYMENT
+        LIVE-DEPLOYMENT
       </div>
-      <h2 class="text-4xl md:text-5xl font-black gradient-text">The App at a Glance.</h2>
-      <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">Real alerts, real networks — screenshots captured from a live CYJAN IDS deployment.</p>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">Die App im Überblick.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-2xl mx-auto">Echte Alarme, echte Netze — Screenshots aus einer laufenden CYJAN-IDS-Installation.</p>
     </div>
 
     <!-- Tab switcher -->
     <div class="flex gap-3 justify-center mb-8 flex-wrap">
       <button onclick="showTab('tab-dashboard')" id="btn-dashboard"
         class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-sky-500 text-sky-300 bg-sky-900/30">
-        Dashboard &amp; Alerts
+        Dashboard &amp; Alarme
       </button>
       <button onclick="showTab('tab-hosts')" id="btn-hosts"
         class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
-        Host Inventory
+        Host-Inventar
       </button>
       <button onclick="showTab('tab-networks')" id="btn-networks"
         class="demo-tab-btn px-5 py-2 rounded-xl text-sm font-medium border transition-all border-slate-700 text-slate-400 hover:border-sky-700 hover:text-sky-400">
-        Networks
+        Netzwerke
       </button>
     </div>
 
@@ -532,13 +532,13 @@
       </div>
 
       <div id="tab-dashboard" class="demo-tab">
-        <img src="screenshots/dashboard.png" alt="CYJAN IDS dashboard with a live alert feed" class="w-full" loading="lazy" />
+        <img src="/screenshots/dashboard.png" alt="CYJAN-IDS-Dashboard mit Live-Alarmfeed" class="w-full" loading="lazy" />
       </div>
       <div id="tab-hosts" class="demo-tab hidden">
-        <img src="screenshots/hosts.png" alt="CYJAN IDS host inventory" class="w-full" loading="lazy" />
+        <img src="/screenshots/hosts.png" alt="CYJAN-IDS-Host-Inventar" class="w-full" loading="lazy" />
       </div>
       <div id="tab-networks" class="demo-tab hidden">
-        <img src="screenshots/networks.png" alt="CYJAN IDS network inventory" class="w-full" loading="lazy" />
+        <img src="/screenshots/networks.png" alt="CYJAN-IDS-Netzwerk-Inventar" class="w-full" loading="lazy" />
       </div>
     </div>
 
@@ -547,23 +547,23 @@
       <div class="card-bg rounded-xl p-5 glow-border text-sm">
         <div class="flex items-center gap-2 mb-2">
           <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot"></span>
-          <span class="font-semibold text-sky-100">Live Alert Feed</span>
+          <span class="font-semibold text-sky-100">Live-Alarmfeed</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">Real-time WebSocket stream of every alert — severity, source, destination, tags, and one-click PCAP download.</p>
+        <p class="text-slate-400 leading-relaxed">WebSocket-Stream jedes Alarms in Echtzeit — Schweregrad, Quelle, Ziel, Tags und PCAP-Download mit einem Klick.</p>
       </div>
       <div class="card-bg rounded-xl p-5 glow-border text-sm">
         <div class="flex items-center gap-2 mb-2">
           <span class="w-2 h-2 rounded-full bg-sky-400"></span>
-          <span class="font-semibold text-sky-100">Threat Level Gauge</span>
+          <span class="font-semibold text-sky-100">Threat-Level-Anzeige</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">Live aggregated threat index — critical / high / medium / low breakdown for an instant read on network health.</p>
+        <p class="text-slate-400 leading-relaxed">Aggregierter Live-Bedrohungsindex — Aufschlüsselung nach kritisch / hoch / mittel / niedrig für einen sofortigen Blick auf den Netzzustand.</p>
       </div>
       <div class="card-bg rounded-xl p-5 glow-border text-sm">
         <div class="flex items-center gap-2 mb-2">
           <span class="w-2 h-2 rounded-full bg-purple-400"></span>
-          <span class="font-semibold text-sky-100">Host Trust System</span>
+          <span class="font-semibold text-sky-100">Host-Trust-System</span>
         </div>
-        <p class="text-slate-400 leading-relaxed">Every host auto-enriched via DNS and GeoIP — unknown devices trigger an alert the moment they appear.</p>
+        <p class="text-slate-400 leading-relaxed">Jeder Host wird automatisch per DNS und GeoIP angereichert — unbekannte Geräte lösen sofort einen Alarm aus, sobald sie auftauchen.</p>
       </div>
     </div>
   </div>
@@ -573,9 +573,9 @@
 <section id="architecture" class="py-24 bg-slate-950/60">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">ARCHITECTURE</div>
-      <h2 class="text-4xl md:text-5xl font-black gradient-text">Event-driven pipeline.</h2>
-      <p class="text-slate-400 mt-4 text-lg max-w-xl mx-auto">Apache Kafka at the core — every component is independently scalable and replaceable.</p>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">ARCHITEKTUR</div>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">Event-getriebene Pipeline.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-xl mx-auto">Apache Kafka im Zentrum — jede Komponente ist unabhängig skalierbar und austauschbar.</p>
     </div>
 
     <div class="card-bg rounded-2xl p-8 overflow-x-auto">
@@ -586,7 +586,7 @@
 
           <!-- Source -->
           <div class="text-center">
-            <div class="px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-600 text-xs font-mono text-slate-300 mb-2">Mirror Port</div>
+            <div class="px-4 py-2.5 rounded-xl bg-slate-800 border border-slate-600 text-xs font-mono text-slate-300 mb-2">Mirror-Port</div>
             <div class="text-slate-600 text-xs">↓</div>
             <div class="px-4 py-2.5 rounded-xl border border-orange-600/40 bg-orange-900/15 text-xs font-mono text-orange-300">sniffer (Rust)</div>
           </div>
@@ -597,7 +597,7 @@
           <div class="text-center">
             <div class="px-6 py-3 rounded-xl border-2 border-sky-600/50 bg-sky-900/20 text-sm font-bold text-sky-300 font-mono">
               Apache Kafka
-              <div class="text-xs text-sky-600 font-normal mt-1">KRaft · 6 topics</div>
+              <div class="text-xs text-sky-600 font-normal mt-1">KRaft · 6 Topics</div>
             </div>
           </div>
 
@@ -634,15 +634,15 @@
         <div class="mt-8 pt-8 border-t border-slate-800 grid md:grid-cols-3 gap-4 text-sm text-slate-400">
           <div class="flex items-start gap-3">
             <span class="w-2 h-2 rounded-full bg-purple-400 mt-1.5 shrink-0"></span>
-            <div><span class="text-purple-300 font-medium">Suricata Bridge</span> — EVE JSON → Kafka → unified alert stream</div>
+            <div><span class="text-purple-300 font-medium">Suricata-Bridge</span> — EVE JSON → Kafka → vereinter Alarm-Stream</div>
           </div>
           <div class="flex items-start gap-3">
             <span class="w-2 h-2 rounded-full bg-violet-400 mt-1.5 shrink-0"></span>
-            <div><span class="text-violet-300 font-medium">IRMA Bridge</span> — external IDS REST poll → Kafka → same pipeline</div>
+            <div><span class="text-violet-300 font-medium">IRMA-Bridge</span> — externes IDS via REST-Poll → Kafka → selbe Pipeline</div>
           </div>
           <div class="flex items-start gap-3">
             <span class="w-2 h-2 rounded-full bg-green-400 mt-1.5 shrink-0"></span>
-            <div><span class="text-green-300 font-medium">Training Loop</span> — feedback → labelled samples → model retrain</div>
+            <div><span class="text-green-300 font-medium">Training-Loop</span> — Feedback → gelabelte Samples → Modell-Retraining</div>
           </div>
         </div>
       </div>
@@ -668,9 +668,9 @@
 <section id="quickstart" class="py-24 hex-bg">
   <div class="max-w-5xl mx-auto px-6">
     <div class="text-center mb-16">
-      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">QUICK START</div>
-      <h2 class="text-4xl md:text-5xl font-black gradient-text">Up in minutes.</h2>
-      <p class="text-slate-400 mt-4 text-lg">Two paths to production — choose yours.</p>
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">SCHNELLSTART</div>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">In Minuten produktiv.</h2>
+      <p class="text-slate-400 mt-4 text-lg">Zwei Wege zur Produktion — wählen Sie Ihren.</p>
     </div>
 
     <div class="grid md:grid-cols-2 gap-8">
@@ -680,19 +680,19 @@
           <div class="w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center text-white font-bold text-sm">A</div>
           <div>
             <div class="font-bold text-sky-100">Debian Live ISO</div>
-            <div class="text-xs text-slate-500">Recommended for production</div>
+            <div class="text-xs text-slate-500">Empfohlen für die Produktion</div>
           </div>
         </div>
         <div class="space-y-3">
           <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm overflow-x-auto">
-            <div class="text-slate-500 mb-2"># Flash to USB</div>
+            <div class="text-slate-500 mb-2"># Auf USB-Stick schreiben</div>
             <div class="text-green-400">dd if=cyjan-ids-v1.x.x.iso \</div>
             <div class="text-green-400">&nbsp;&nbsp;of=/dev/sdX bs=4M status=progress</div>
           </div>
-          <p class="text-slate-400 text-sm">Boot from USB → First-Boot-Wizard guides you through interface, IP, and password setup. Fully automated thereafter.</p>
+          <p class="text-slate-400 text-sm">Vom USB booten → der First-Boot-Wizard führt Sie durch Interface, IP und Passwortvergabe. Danach läuft alles automatisch.</p>
           <a href="https://github.com/JxxKal/ids/releases" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors">
-            Download latest release →
+            Aktuelles Release laden →
           </a>
         </div>
       </div>
@@ -703,26 +703,26 @@
           <div class="w-8 h-8 rounded-full bg-slate-600 flex items-center justify-center text-white font-bold text-sm">B</div>
           <div>
             <div class="font-bold text-sky-100">Docker Compose</div>
-            <div class="text-xs text-slate-500">Dev / test mode</div>
+            <div class="text-xs text-slate-500">Dev-/Test-Modus</div>
           </div>
         </div>
         <div class="space-y-3">
           <div class="bg-slate-900 rounded-xl p-4 font-mono text-sm overflow-x-auto">
-            <div class="text-slate-500 mb-2"># Clone and start in test mode</div>
+            <div class="text-slate-500 mb-2"># Klonen und im Test-Modus starten</div>
             <div class="text-green-400">git clone https://github.com/JxxKal/ids</div>
             <div class="text-green-400">cd ids</div>
             <div class="text-green-400">cp .env.example .env</div>
             <div class="text-green-400 mt-2">docker compose \</div>
             <div class="text-green-400">&nbsp;&nbsp;--profile test up -d</div>
           </div>
-          <p class="text-slate-400 text-sm">Synthetic traffic via built-in generator. No physical mirror port needed for testing.</p>
+          <p class="text-slate-400 text-sm">Synthetischer Traffic über den eingebauten Generator. Für Tests ist kein physischer Mirror-Port nötig.</p>
         </div>
       </div>
     </div>
 
     <!-- Service URLs table -->
     <div class="mt-8 card-bg rounded-2xl p-6 glow-border">
-      <h3 class="text-sm font-semibold text-sky-300 mb-4 font-mono">SERVICE ENDPOINTS (test mode)</h3>
+      <h3 class="text-sm font-semibold text-sky-300 mb-4 font-mono">SERVICE-ENDPUNKTE (TEST-MODUS)</h3>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
         <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl">
           <span class="w-2 h-2 rounded-full bg-green-400 pulse-dot shrink-0"></span>
@@ -748,14 +748,14 @@
         <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl">
           <span class="w-2 h-2 rounded-full bg-slate-400 shrink-0"></span>
           <div>
-            <div class="text-xs text-slate-500">MinIO Console</div>
+            <div class="text-xs text-slate-500">MinIO-Konsole</div>
             <div class="font-mono text-sm text-sky-300">:9001</div>
           </div>
         </div>
         <div class="flex items-center gap-3 p-3 bg-slate-900/60 rounded-xl">
           <span class="w-2 h-2 rounded-full bg-yellow-400 shrink-0"></span>
           <div>
-            <div class="text-xs text-slate-500">Default login</div>
+            <div class="text-xs text-slate-500">Standard-Login</div>
             <div class="font-mono text-sm text-yellow-300">admin / changeme</div>
           </div>
         </div>
@@ -773,26 +773,26 @@
       </svg>
     </div>
 
-    <h2 class="text-4xl md:text-5xl font-black gradient-text mb-6">100% Open Source.</h2>
+    <h2 class="text-4xl md:text-5xl font-black gradient-text mb-6">100 % Open Source.</h2>
     <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-      CYJAN IDS is released under the <span class="text-sky-400 font-medium">MIT License</span> — inspect every line, contribute freely, and deploy without restrictions. Security through transparency.
+      CYJAN IDS steht unter der <span class="text-sky-400 font-medium">MIT-Lizenz</span> — jede Zeile prüfbar, frei zur Mitarbeit, ohne Einsatzbeschränkungen. Sicherheit durch Transparenz.
     </p>
 
     <div class="grid sm:grid-cols-3 gap-6 mb-12">
       <div class="card-bg rounded-2xl p-6 glow-border text-left">
         <div class="text-2xl mb-3">🔍</div>
-        <h3 class="font-bold text-sky-100 mb-2">Auditable</h3>
-        <p class="text-slate-400 text-sm">Every component, every rule, every ML model — fully transparent. No black boxes in your security stack.</p>
+        <h3 class="font-bold text-sky-100 mb-2">Prüfbar</h3>
+        <p class="text-slate-400 text-sm">Jede Komponente, jede Regel, jedes ML-Modell — vollständig transparent. Keine Blackbox im Sicherheits-Stack.</p>
       </div>
       <div class="card-bg rounded-2xl p-6 glow-border text-left">
         <div class="text-2xl mb-3">🔧</div>
-        <h3 class="font-bold text-sky-100 mb-2">Extensible</h3>
-        <p class="text-slate-400 text-sm">Add custom Suricata rules, integrate your own alert sources via the IRMA bridge pattern, tune the ML threshold.</p>
+        <h3 class="font-bold text-sky-100 mb-2">Erweiterbar</h3>
+        <p class="text-slate-400 text-sm">Eigene Suricata-Regeln ergänzen, beliebige Alarmquellen über das IRMA-Bridge-Muster anbinden, ML-Schwelle individuell justieren.</p>
       </div>
       <div class="card-bg rounded-2xl p-6 glow-border text-left">
         <div class="text-2xl mb-3">🤝</div>
         <h3 class="font-bold text-sky-100 mb-2">Community</h3>
-        <p class="text-slate-400 text-sm">Issues, pull requests, and feature discussions happen in the open on GitHub. Your OT environment knowledge is welcome.</p>
+        <p class="text-slate-400 text-sm">Issues, Pull Requests und Feature-Diskussionen laufen offen auf GitHub. Ihr OT-Wissen ist willkommen.</p>
       </div>
     </div>
 
@@ -816,7 +816,7 @@
             <circle cx="340" cy="255" r="4" fill="#38bdf8"/>
           </svg>
         </div>
-        <span class="text-slate-500 text-sm font-mono">CYJAN IDS · MIT License · <a href="https://github.com/JxxKal/ids" class="text-sky-600 hover:text-sky-400 transition-colors">github.com/JxxKal/ids</a></span>
+        <span class="text-slate-500 text-sm font-mono">CYJAN IDS · MIT-Lizenz · <a href="https://github.com/JxxKal/ids" class="text-sky-600 hover:text-sky-400 transition-colors">github.com/JxxKal/ids</a></span>
       </div>
       <div class="text-slate-600 text-xs font-mono">PROTECT · DETECT · RESPOND</div>
     </div>

@@ -5,6 +5,7 @@ services:
       - "4444:80"
     volumes:
       - ./index.html:/usr/share/nginx/html/index.html:ro
+      - ./de:/usr/share/nginx/html/de:ro
       - ./screenshots:/usr/share/nginx/html/screenshots:ro
       - ./assets:/usr/share/nginx/html/assets:ro
       - ./design-system:/usr/share/nginx/html/design-system:ro
