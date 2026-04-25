@@ -193,7 +193,7 @@
       <div class="fade-in">
         <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 mb-6 rounded-full text-xs font-medium text-sky-300 uppercase border border-sky-700/30" style="letter-spacing: 0.24em; background: rgba(14,165,233,0.06);">
           <span class="w-1.5 h-1.5 rounded-full bg-green-400 pulse-dot" style="box-shadow: 0 0 8px #22c55e;"></span>
-          v1.0 · MIT · OT-Sentrymode
+          <span id="release-version">v1.0.29</span> · OT-Sentrymode
         </div>
 
         <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-[1.05] mb-6">
@@ -800,6 +800,17 @@
       if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Live version badge — pulls the latest tag from GitHub
+  fetch('https://api.github.com/repos/JxxKal/ids/releases/latest')
+    .then(r => r.ok ? r.json() : null)
+    .then(d => {
+      if (d && d.tag_name) {
+        const el = document.getElementById('release-version');
+        if (el) el.textContent = d.tag_name;
+      }
+    })
+    .catch(() => {});
 
   // Demo tab switcher
   function showTab(tabId) {
