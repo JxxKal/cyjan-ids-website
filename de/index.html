@@ -256,7 +256,7 @@
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 20h16"/></svg>
             Broschüre laden
           </a>
-          <a href="https://github.com/JxxKal/ids/releases/latest" target="_blank" rel="noopener noreferrer"
+          <a data-cyjan-download="iso" href="https://github.com/JxxKal/ids/releases" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white transition-all"
              style="background: linear-gradient(135deg,#10b981,#059669); box-shadow: 0 0 30px rgba(16,185,129,0.25);">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 4.5h13.5a.75.75 0 01.75.75v3a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75v-3a.75.75 0 01.75-.75zM5.25 11.25h13.5a.75.75 0 01.75.75v3a.75.75 0 01-.75.75H5.25a.75.75 0 01-.75-.75v-3a.75.75 0 01.75-.75zM3 18a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 18z"/></svg>
@@ -698,7 +698,7 @@
             <div class="text-green-400">&nbsp;&nbsp;of=/dev/sdX bs=4M status=progress</div>
           </div>
           <p class="text-slate-400 text-sm">Vom USB booten → der First-Boot-Wizard führt Sie durch Interface, IP und Passwortvergabe. Danach läuft alles automatisch.</p>
-          <a href="https://github.com/JxxKal/ids/releases" target="_blank" rel="noopener noreferrer"
+          <a data-cyjan-download="iso" href="https://github.com/JxxKal/ids/releases" target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center gap-2 text-sky-400 hover:text-sky-300 text-sm font-medium transition-colors">
             Aktuelles Release laden →
           </a>
@@ -1130,5 +1130,6 @@
   requestAnimationFrame(tick);
 })();
 </script>
+<script src="/assets/js/cyjan-ids-downloads.js?v=1" defer></script>
 </body>
 </html>
