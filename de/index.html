@@ -490,6 +490,36 @@
         <p class="text-slate-400 text-sm leading-relaxed">Vollständige REST-Oberfläche mit interaktivem Swagger unter <code class="text-sky-400 font-mono text-xs">/api/docs</code>, ReDoc und OpenAPI-JSON-Spec. JWT plus SAML 2.0, lange API-Tokens, CSV-Bulk-Endpunkte und Live-WebSocket-Events — gebaut für SIEM, Automatisierung und Drittanbieter-Anbindung.</p>
       </div>
 
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h16v16H4zM12 4v16M4 12h16"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">OT-Boundary-Klassifikation</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Jeder Alarm wird automatisch mit Quell- und Zielzone versehen — <span class="text-orange-300">OT</span>, <span class="text-sky-300">IT</span>, Internet — abgeleitet aus den bekannten Netzen (spezifischster CIDR-Match gewinnt). Eine konfigurierbare 3×3-Prioritätsmatrix kennzeichnet <code class="text-orange-400 font-mono text-xs">OT↔Internet</code>-Übergänge als <span class="text-red-400 font-mono">P0</span>; der Wochenbericht zeigt aktive Boundary-Verletzungen pro Zonenpaar, Top-Egress-Talker und Geo/ASN.</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Konform zum BSI-IDS-Leitfaden</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Entwickelt entlang des <a href="https://www.bsi.bund.de/DE/Service-Navi/Publikationen/Studien/IDS02/gr1_htm.html" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 underline">BSI-Leitfadens für IDS-Systeme</a>: passive Erfassung über Mirror-Port / TAP (keine Rückwirkung aufs Netz), reine Header-Analyse — kein Payload, kein SSL-Aufbruch (Vertraulichkeit), mTLS zwischen allen Komponenten, signierte Paket-Updates, isoliertes Management-Netz und komponentenweise Authentifizierung (Eigenschutz). Betrieblich: redundante Pipeline, Sub-Sekunden-WebSocket-Feed (Verfügbarkeit) und manipulationssicheres Audit-Log (Nachvollziehbarkeit).</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Remote-Taps für vSwitches &amp; Außenstandorte</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Kompakte Tap-Knoten an entfernten physischen Switch- oder vSwitch-Mirror-Ports fahren die komplette Detection-Pipeline lokal — nur fertige Alarme gehen via mTLS-WSS zum Master. Übersteht Master-Ausfälle dank lokaler SQLite-Queue mit Replay beim Reconnect (per <code class="text-sky-400 font-mono text-xs">alert_id</code> dedupliziert), zentral alle 5 Min Rule-Sync. Außenstandorte und virtualisierte Umgebungen ohne Raw-Traffic-Backhaul.</p>
+      </div>
+
     </div>
   </div>
 </section>

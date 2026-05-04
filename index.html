@@ -490,6 +490,36 @@
         <p class="text-slate-400 text-sm leading-relaxed">Complete REST surface with interactive Swagger at <code class="text-sky-400 font-mono text-xs">/api/docs</code>, ReDoc, and an OpenAPI JSON spec. JWT plus SAML 2.0 auth, long-lived API tokens, CSV bulk endpoints, and live WebSocket events — built for SIEM, automation, and third-party integration.</p>
       </div>
 
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4h16v16H4zM12 4v16M4 12h16"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">OT-Boundary Classification</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Every alert is auto-tagged with source and destination zone — <span class="text-orange-300">OT</span>, <span class="text-sky-300">IT</span>, Internet — drawn from your known networks (most-specific CIDR wins). A configurable 3×3 priority matrix flags <code class="text-orange-400 font-mono text-xs">OT↔Internet</code> crossings as <span class="text-red-400 font-mono">P0</span>; weekly reports break down active boundary breaches per zone-pair, top egress talkers, and Geo/ASN.</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Aligned with BSI IDS Guideline</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Built along the <a href="https://www.bsi.bund.de/DE/Service-Navi/Publikationen/Studien/IDS02/gr1_htm.html" target="_blank" rel="noopener" class="text-sky-400 hover:text-sky-300 underline">BSI IDS-Leitfaden</a>: passive Mirror-Port / TAP capture (no traffic injection), header-only analysis — no payload, no SSL break-and-inspect (Vertraulichkeit), mTLS between all components, signed package updates, isolated management network and per-component auth (Eigenschutz). Operator-side: redundant pipeline, sub-second WebSocket feed (Verfügbarkeit) and tamper-evident audit log (Nachvollziehbarkeit).</p>
+      </div>
+
+      <div class="card-bg rounded-2xl p-6 glow-border glow-border-hover transition-all">
+        <div class="w-12 h-12 feature-icon-bg rounded-xl flex items-center justify-center mb-4">
+          <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"/>
+          </svg>
+        </div>
+        <h3 class="font-bold text-sky-100 text-lg mb-2">Remote-Taps for vSwitches &amp; Remote Sites</h3>
+        <p class="text-slate-400 text-sm leading-relaxed">Compact Tap nodes attach to remote physical switch or vSwitch mirror ports and run the full detection pipeline locally — only finished alerts stream to the Master over mTLS-WSS. Survives Master outages via per-Tap SQLite queue with replay-on-reconnect (deduped by alert_id), centrally rule-synced every 5 min. Branch offices and virtualized environments without backhauling raw traffic.</p>
+      </div>
+
     </div>
   </div>
 </section>
