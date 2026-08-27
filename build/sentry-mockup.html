@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#020617; --s1:#0b1120; --s2:#0f172a; --s3:#172033;
+    --b1:#1e293b; --b2:#334155;
+    --accent:#0ea5e9; --accent-bright:#38bdf8;
+    --ot:#f97316;
+    --fg:#e0f2fe; --fg-body:#e2e8f0; --fg-2:#94a3b8; --fg-3:#64748b; --fg-4:#475569;
+    --crit:#ef4444; --high:#dc2626; --med:#f97316; --low:#22c55e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{width:393px;height:852px;background:var(--bg);overflow:hidden;}
+  body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--fg-body);
+       -webkit-font-smoothing:antialiased;}
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .eyebrow{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;
+           letter-spacing:2.6px;text-transform:uppercase;color:var(--fg-3);}
+  .tab{font-variant-numeric:tabular-nums;}
+
+  /* ── Status bar ── */
+  .statusbar{height:54px;display:flex;align-items:flex-end;justify-content:space-between;
+             padding:0 26px 8px;font-family:'IBM Plex Sans',sans-serif;}
+  .statusbar .time{font-size:16px;font-weight:600;color:#fff;letter-spacing:.2px;}
+  .statusbar .right{display:flex;align-items:center;gap:6px;}
+
+  /* ── Header ── */
+  .header{padding:10px 16px 14px;display:flex;align-items:flex-start;justify-content:space-between;}
+  .header h1{font-size:26px;font-weight:600;color:var(--fg);letter-spacing:-.3px;line-height:1.15;}
+  .header .sub{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-3);
+               letter-spacing:1px;margin-top:5px;}
+
+  .screen{padding:0 16px;}
+
+  /* ── Cards ── */
+  .card{background:var(--s1);border:1px solid var(--b1);border-radius:16px;overflow:hidden;}
+  .stripe{height:3px;background:linear-gradient(90deg,#ef4444 0%,#ef4444 18%,#dc2626 45%,#f97316 72%,#22c55e 100%);}
+
+  /* ── Threat gauge ── */
+  .gauge-inner{padding:14px 16px 16px;}
+  .gauge-top{display:flex;align-items:flex-start;justify-content:space-between;}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:10px;
+        border:1px solid rgba(21,128,61,.5);background:rgba(22,101,52,.5);}
+  .pill .dot{width:6px;height:6px;border-radius:3px;background:var(--low);}
+  .pill span{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;
+             letter-spacing:1.8px;color:var(--low);}
+  .dial{display:flex;justify-content:flex-start;margin:6px 0 2px;}
+  .dial-wrap{position:relative;width:112px;height:112px;}
+  .dial-wrap .val{position:absolute;inset:0;display:flex;flex-direction:column;
+                  align-items:center;justify-content:center;}
+  .dial-wrap .num{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:30px;
+                  color:var(--accent);letter-spacing:-.8px;line-height:1;}
+  .dial-wrap .cap{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:9px;
+                  letter-spacing:2px;color:var(--fg-3);margin-top:4px;}
+
+  .bars{display:flex;gap:11px;margin-top:16px;}
+  .bar{flex:1;}
+  .bar-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:4px;}
+  .bar-top .lbl{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;
+                letter-spacing:2.6px;color:var(--fg-3);}
+  .bar-top .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;
+              font-variant-numeric:tabular-nums;}
+  .track{height:3px;background:var(--b2);border-radius:2px;overflow:hidden;}
+  .fill{height:100%;border-radius:2px;}
+  .window{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-4);margin-top:12px;}
+
+  /* ── System metrics ── */
+  .sys{margin-top:12px;padding:14px 16px;}
+  .metrics{display:flex;}
+  .metric{flex:1;}
+  .metric .v{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:16px;
+             color:var(--fg);font-variant-numeric:tabular-nums;margin-top:5px;}
+  .iface{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-4);margin-top:12px;}
+
+  /* ── Section title ── */
+  .section{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:11px;
+           letter-spacing:2.6px;text-transform:uppercase;color:var(--fg-3);
+           margin:20px 0 10px 2px;}
+
+  /* ── Alert cards ── */
+  .alert{display:flex;border-radius:14px;border:1px solid;overflow:hidden;margin-bottom:8px;}
+  .alert .sev{width:3px;flex:0 0 3px;}
+  .alert .body{flex:1;min-width:0;padding:8px 12px;}
+  .row1{display:flex;align-items:center;gap:6px;margin-bottom:4px;}
+  .badge{border:1px solid;border-radius:6px;padding:3px 7px;
+         font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;}
+  .tagbadge{border:1px solid;border-radius:4px;padding:3px 6px;
+            font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:11px;letter-spacing:1px;}
+  .rule{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-3);
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .cnt{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:11px;color:var(--fg-2);}
+  .ts{margin-left:auto;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--fg-3);
+      text-align:right;line-height:1.35;white-space:nowrap;}
+  .desc{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:13px;line-height:1.45;
+        color:var(--fg);margin-bottom:4px;}
+  .flow{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--fg-2);
+        white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+  .flow .arr{color:var(--fg-3);}
+  .flow .proto{color:var(--fg-3);font-size:11px;}
+
+  /* ── Tab bar ── */
+  .tabbar{position:absolute;bottom:0;left:0;right:0;height:84px;
+          background:rgba(2,6,23,.96);border-top:1px solid var(--b1);
+          display:flex;padding-top:10px;backdrop-filter:blur(12px);}
+  .tabitem{flex:1;display:flex;flex-direction:column;align-items:center;gap:5px;position:relative;}
+  .tabitem .lb{font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;
+               letter-spacing:1.4px;color:var(--fg-3);}
+  .tabitem.on .lb{color:var(--accent);}
+  .tabbadge{position:absolute;top:-4px;left:calc(50% + 5px);min-width:16px;height:16px;
+            border-radius:8px;background:var(--crit);color:#fff;
+            font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:10px;
+            display:flex;align-items:center;justify-content:center;padding:0 4px;}
+  .fade{position:absolute;left:0;right:0;bottom:84px;height:56px;
+        background:linear-gradient(to top,#020617,rgba(2,6,23,0));pointer-events:none;}
+</style></head><body>
+
+<!-- Status bar -->
+<div class="statusbar">
+  <div class="time">9:41</div>
+  <div class="right">
+    <!-- cellular -->
+    <svg width="18" height="12" viewBox="0 0 18 12" fill="#fff">
+      <rect x="0" y="8"  width="3" height="4"  rx="1"/>
+      <rect x="5" y="6"  width="3" height="6"  rx="1"/>
+      <rect x="10" y="3.5" width="3" height="8.5" rx="1"/>
+      <rect x="15" y="1" width="3" height="11" rx="1"/>
+    </svg>
+    <!-- wifi -->
+    <svg width="17" height="12" viewBox="0 0 17 12" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round">
+      <path d="M1 4.1C3.1 2.2 5.7 1.2 8.5 1.2s5.4 1 7.5 2.9"/>
+      <path d="M3.6 6.9c1.4-1.2 3.1-1.9 4.9-1.9s3.5.7 4.9 1.9"/>
+      <path d="M6.3 9.6c.6-.6 1.4-.9 2.2-.9s1.6.3 2.2.9"/>
+    </svg>
+    <!-- battery -->
+    <svg width="27" height="13" viewBox="0 0 27 13" fill="none">
+      <rect x="0.6" y="0.6" width="22" height="11.8" rx="3.4" stroke="#fff" stroke-opacity=".4" stroke-width="1"/>
+      <rect x="2.2" y="2.2" width="18.8" height="8.6" rx="2.2" fill="#fff"/>
+      <path d="M24.4 4.4c1 .4 1.5 1.2 1.5 2.1s-.5 1.7-1.5 2.1V4.4z" fill="#fff" fill-opacity=".4"/>
+    </svg>
+  </div>
+</div>
+
+<!-- Header -->
+<div class="header">
+  <div>
+    <h1>Übersicht</h1>
+    <div class="sub">Werk Nord · verbunden</div>
+  </div>
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" style="margin-top:6px">
+    <circle cx="12" cy="12" r="3"/>
+    <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 8a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 3.66 1.65 1.65 0 0010 2.15V2a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 8V8a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/>
+  </svg>
+</div>
+
+<div class="screen">
+
+  <!-- Threat gauge -->
+  <div class="card">
+    <div class="stripe"></div>
+    <div class="gauge-inner">
+      <div class="gauge-top">
+        <div class="eyebrow">Threat Level · Gesamt</div>
+        <div class="pill"><span class="dot"></span><span>NORMAL</span></div>
+      </div>
+
+      <div class="dial">
+        <div class="dial-wrap">
+          <svg width="112" height="112" viewBox="0 0 112 112">
+            <circle cx="56" cy="56" r="47" fill="none" stroke="#172033" stroke-width="7"/>
+            <circle cx="56" cy="56" r="47" fill="none" stroke="#22c55e" stroke-width="7"
+                    stroke-linecap="round" stroke-dasharray="133 296"
+                    transform="rotate(-180 56 56)"/>
+          </svg>
+          <div class="val">
+            <div class="num tab">19</div>
+            <div class="cap">THREAT</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bars">
+        <div class="bar">
+          <div class="bar-top"><span class="lbl">CRIT</span><span class="n" style="color:#ef4444">0</span></div>
+          <div class="track"><div class="fill" style="width:0%;background:#ef4444"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top"><span class="lbl">HIGH</span><span class="n" style="color:#dc2626">2</span></div>
+          <div class="track"><div class="fill" style="width:11%;background:#dc2626"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top"><span class="lbl">MED</span><span class="n" style="color:#f97316">5</span></div>
+          <div class="track"><div class="fill" style="width:26%;background:#f97316"></div></div>
+        </div>
+        <div class="bar">
+          <div class="bar-top"><span class="lbl">LOW</span><span class="n" style="color:#22c55e">19</span></div>
+          <div class="track"><div class="fill" style="width:100%;background:#22c55e"></div></div>
+        </div>
+      </div>
+
+      <div class="window">Fenster: letzte 15 Minuten</div>
+    </div>
+  </div>
+
+  <!-- System metrics -->
+  <div class="card sys">
+    <div class="metrics">
+      <div class="metric"><div class="eyebrow">Pakete/s</div><div class="v">115</div></div>
+      <div class="metric"><div class="eyebrow">Verlust</div><div class="v">0.00&thinsp;%</div></div>
+      <div class="metric"><div class="eyebrow">CPU</div><div class="v">2&thinsp;%</div></div>
+      <div class="metric"><div class="eyebrow">Disk</div><div class="v">34&thinsp;%</div></div>
+    </div>
+    <div class="iface">Mirror-Interface: enp0s31f6</div>
+  </div>
+
+  <div class="section">Live Alerts</div>
+
+  <!-- Alert 1 — MEDIUM, OT/ICS -->
+  <div class="alert" style="border-color:rgba(194,65,12,.5);background:rgba(124,45,18,.6)">
+    <div class="sev" style="background:#f97316"></div>
+    <div class="body">
+      <div class="row1">
+        <span class="badge" style="color:#f97316;border-color:rgba(194,65,12,.5);background:rgba(124,45,18,.6)">MEDIUM</span>
+        <span class="rule">MODBUS_001</span>
+        <span class="tagbadge" style="color:#f97316;background:rgba(249,115,22,.11);border-color:rgba(249,115,22,.28)">OT/ICS</span>
+        <span class="ts">12:34</span>
+      </div>
+      <div class="desc">Unauthorized Modbus write to PLC coil range</div>
+      <div class="flow">10.10.5.42 <span class="arr">→</span> plc-line3.demo.local:502 <span class="proto">&nbsp;TCP</span></div>
+    </div>
+  </div>
+
+  <!-- Alert 2 — LOW, grouped -->
+  <div class="alert" style="border-color:rgba(21,128,61,.5);background:rgba(22,101,52,.5)">
+    <div class="sev" style="background:#22c55e"></div>
+    <div class="body">
+      <div class="row1">
+        <span class="badge" style="color:#22c55e;border-color:rgba(21,128,61,.5);background:rgba(22,101,52,.5)">LOW</span>
+        <span class="rule">UNKNOWN_HOST_001</span>
+        <span class="cnt">×2</span>
+        <span class="ts">12:34<br><span style="color:#475569">seit 12:29</span></span>
+      </div>
+      <div class="desc">New device on OT segment · no CMDB record</div>
+      <div class="flow">10.10.5.42 <span class="arr">→</span> hmi-02.demo.local:44818 <span class="proto">&nbsp;TCP</span></div>
+    </div>
+  </div>
+
+  <!-- Alert 3 — LOW, grouped (angeschnitten) -->
+  <div class="alert" style="border-color:rgba(21,128,61,.5);background:rgba(22,101,52,.5)">
+    <div class="sev" style="background:#22c55e"></div>
+    <div class="body">
+      <div class="row1">
+        <span class="badge" style="color:#22c55e;border-color:rgba(21,128,61,.5);background:rgba(22,101,52,.5)">LOW</span>
+        <span class="rule">ML_ANOMALY</span>
+        <span class="cnt">×2</span>
+        <span class="ts">12:33<br><span style="color:#475569">seit 12:28</span></span>
+      </div>
+      <div class="desc">Isolation Forest score 0.87 · unusual flow pattern</div>
+      <div class="flow">10.10.1.7 <span class="arr">→</span> 10.10.5.42:502 <span class="proto">&nbsp;TCP</span></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="fade"></div>
+
+<!-- Tab bar -->
+<div class="tabbar">
+  <div class="tabitem on">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 3l8 4v5c0 4.6-3.2 8.4-8 9.6-4.8-1.2-8-5-8-9.6V7l8-4z"/>
+      <circle cx="12" cy="11.5" r="2.4"/>
+    </svg>
+    <span class="lb">DASHBOARD</span>
+  </div>
+  <div class="tabitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M18 8a6 6 0 10-12 0c0 6-2 7-2 7h16s-2-1-2-7z"/>
+      <path d="M10.5 20a2 2 0 003 0"/>
+    </svg>
+    <span class="lb">ALERTS</span>
+    <span class="tabbadge">1</span>
+  </div>
+  <div class="tabitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="12" rx="2"/>
+      <path d="M8 20h8M12 16v4"/>
+    </svg>
+    <span class="lb">HOSTS</span>
+  </div>
+  <div class="tabitem">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18"/>
+    </svg>
+    <span class="lb">NETZ</span>
+  </div>
+</div>
+
+</body></html>

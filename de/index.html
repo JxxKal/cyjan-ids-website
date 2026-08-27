@@ -10,7 +10,7 @@
   <link rel="alternate" hreflang="de" href="https://www.cyjan.dev/de/" />
   <link rel="alternate" hreflang="x-default" href="https://www.cyjan.dev/" />
   <link rel="stylesheet" href="/assets/css/fonts.css?v=3" />
-  <link rel="stylesheet" href="/assets/css/tailwind.css?v=7" />
+  <link rel="stylesheet" href="/assets/css/tailwind.css?v=9" />
   <style>
     * { box-sizing: border-box; }
 
@@ -403,23 +403,21 @@
                 <p class="text-slate-400 text-xs leading-relaxed">Der Proxy kennt Sentries, Geräte und Kopplungscodes. Alarme, Hosts, Flows und PCAPs laufen durch — nichts davon bleibt in der Cloud.</p>
               </div>
             </div>
+
+            <div class="mt-4 rounded-xl border border-sky-900/60 bg-slate-950/50 px-4 py-3">
+              <div class="text-xs font-mono tracking-widest text-slate-500 mb-2">VERBINDUNGSWEG</div>
+              <div class="font-mono text-xs text-slate-400 leading-relaxed"><span class="text-orange-400">OT-Netz · kein Ingress</span><span class="text-slate-700">&nbsp; │ &nbsp;</span><span class="text-orange-300">app-connect</span> <span class="text-slate-600">──&nbsp;ausgehend&nbsp;:443&nbsp;·&nbsp;WSS&nbsp;──▶</span> <span class="text-sky-300">proxy.cyjan.dev</span> <span class="text-slate-600">+&nbsp;APNs&nbsp;&nbsp;◀──</span> <span class="text-sky-300">CYJAN Sentry</span> <span class="text-slate-600">(iOS)</span></div>
+            </div>
           </div>
 
-          <div class="lg:col-span-2">
-            <div class="rounded-xl border border-sky-900/60 bg-slate-950/70 p-4 overflow-x-auto">
-              <div class="text-xs font-mono tracking-widest text-slate-500 mb-3">VERBINDUNGSWEG</div>
-<pre class="font-mono text-xs leading-relaxed text-slate-400 min-w-max"><span class="text-orange-400">OT-Netz — kein Ingress</span>
-
-   ids-api ◄── <span class="text-orange-300">app-connect</span>
-                  │
-                  │ ausgehend :443
-                  │ persistente WSS
-                  ▼
-       <span class="text-sky-300">proxy.cyjan.dev</span>  + APNs
-                  ▲
-                  │ TLS · Device-JWT
-                  │
-       ◉ <span class="text-sky-300">CYJAN Sentry</span> (iOS)</pre>
+          <div class="lg:col-span-2 flex justify-center">
+            <div class="w-full" style="max-width: 272px;">
+              <div class="p-2.5" style="border-radius: 2.7rem; background: linear-gradient(160deg,#334155,#0b1120 55%); box-shadow: 0 30px 70px rgba(0,0,0,0.65), 0 0 0 1px rgba(14,165,233,0.25), 0 0 70px rgba(14,165,233,0.14);">
+                <img src="/screenshots/app-sentry.png" width="1179" height="2556" loading="lazy"
+                     alt="CYJAN Sentry on iPhone — Threat-Level-Anzeige, Sniffer-Kennzahlen und der Live-Alarm-Feed"
+                     class="block w-full" style="border-radius: 2.1rem;" />
+              </div>
+              <p class="text-center text-xs font-mono text-slate-500 mt-3">Dashboard · Demo-Daten</p>
             </div>
           </div>
 
