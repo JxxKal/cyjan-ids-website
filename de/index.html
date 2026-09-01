@@ -131,6 +131,46 @@
       0%, 100% { filter: drop-shadow(0 0 28px rgba(34,211,238,0.28)); }
       50%      { filter: drop-shadow(0 0 56px rgba(34,211,238,0.55)); }
     }
+
+    /* Ad film player (assets/video/cyjan-ad.*) */
+    .film-frame { position: relative; }
+    .film-frame video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #020617;
+    }
+    .film-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px;
+      padding: 0; border: 0; cursor: pointer;
+      background: radial-gradient(ellipse at center, rgba(2,6,23,0.20) 0%, rgba(2,6,23,0.72) 100%);
+      transition: background 0.3s ease;
+    }
+    .film-overlay:hover { background: radial-gradient(ellipse at center, rgba(2,6,23,0.10) 0%, rgba(2,6,23,0.58) 100%); }
+    .film-overlay[hidden] { display: none; }
+    .film-play {
+      width: 76px; height: 76px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 999px;
+      background: rgba(14,165,233,0.16);
+      border: 1.5px solid rgba(56,189,248,0.75);
+      box-shadow: 0 0 40px rgba(14,165,233,0.35);
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    }
+    .film-overlay:hover .film-play,
+    .film-overlay:focus-visible .film-play {
+      transform: scale(1.08);
+      background: rgba(14,165,233,0.28);
+      box-shadow: 0 0 60px rgba(14,165,233,0.5);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .film-overlay, .film-play { transition: none; }
+      .film-overlay:hover .film-play,
+      .film-overlay:focus-visible .film-play { transform: none; }
+    }
   </style>
 </head>
 <body>
@@ -354,6 +394,55 @@
     </div>
   </div>
 </div>
+
+<!-- Ad film -->
+<section id="film" class="py-24 hex-bg">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border border-sky-700/50 text-sky-400 bg-sky-900/20 mb-4">
+        DER FILM
+      </div>
+      <h2 class="text-4xl md:text-5xl font-black gradient-text">In 27 Sekunden erkl&auml;rt.</h2>
+      <p class="text-slate-400 mt-4 text-lg max-w-xl mx-auto">Vom Mirror-Port bis zum Alert auf dem Analysten-Bildschirm &mdash; CYJAN IDS dort, wo es hingeh&ouml;rt: im Rack.</p>
+    </div>
+
+    <div class="film-frame rounded-2xl overflow-hidden glow-border card-bg">
+      <video id="adFilm" controls playsinline preload="none"
+             poster="/assets/video/cyjan-ad-poster.jpg"
+             aria-label="CYJAN-IDS-Werbefilm, 27 Sekunden, ohne Ton">
+        <source src="/assets/video/cyjan-ad.mp4" type="video/mp4" />
+        <p class="p-6 text-slate-400">Dein Browser kann dieses Video nicht abspielen. <a href="/assets/video/cyjan-ad.mp4" class="text-sky-400 underline">Film herunterladen (MP4)</a></p>
+      </video>
+      <button type="button" id="adFilmPlay" class="film-overlay" hidden aria-label="CYJAN-IDS-Film abspielen">
+        <span class="film-play">
+          <svg class="w-7 h-7 text-sky-200" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.14v13.72a1 1 0 001.54.84l10.29-6.86a1 1 0 000-1.68L9.54 4.3A1 1 0 008 5.14z"/></svg>
+        </span>
+        <span class="font-mono text-[10px] uppercase tracking-[0.24em] text-sky-300">Abspielen &middot; 0:27</span>
+      </button>
+    </div>
+
+    <p class="text-center font-mono text-xs text-slate-600 mt-6">27 s &middot; ohne Ton &middot; l&auml;dt erst beim Klick auf Play</p>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var film = document.getElementById('adFilm');
+    var overlay = document.getElementById('adFilmPlay');
+    if (!film || !overlay) return;
+    // `controls` stays in the markup so the film is playable without JS; with JS
+    // the poster shows clean and the native controls appear once playback starts.
+    film.removeAttribute('controls');
+    overlay.hidden = false;
+    overlay.addEventListener('click', function () {
+      overlay.hidden = true;
+      film.setAttribute('controls', '');
+      var p = film.play();
+      if (p && typeof p.catch === 'function') { p.catch(function () { overlay.hidden = false; }); }
+    });
+    film.addEventListener('play', function () { overlay.hidden = true; });
+  })();
+</script>
 
 <!-- Features -->
 <section id="features" class="py-24 hex-bg">

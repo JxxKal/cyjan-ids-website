@@ -1,3 +1,6 @@
 node_modules/
 .DS_Store
 .vscode/
+
+# Source master of the ad film — web-optimized copies live in assets/video/
+/cyjan-ad.mp4
